@@ -24,15 +24,13 @@
     <img src="http://files.goodfil.ms/goodfilms_iphone_screenshot_instagram.jpeg" class="poster"/>
   </slide>
   <slide>
-    <iframe src="http://goodfil.ms/graph"></iframe>
-  </slide>
-  <slide>
     <h1>Today's workshop</h1>
     <p class="sub">will cover</p>
     <ul>
       <li step="step">The <strong>AngularJS philosophy</strong></li>
       <li step="step"><strong>AngularJS syntax</strong> and core concepts</li>
       <li step="step">How to <strong>refactor jQuery-style code</strong> to be more Angular-y</li>
+      <li step="step">How to <strong>fetch, process and display</strong> some data.</li>
     </ul>
   </slide>
   <slide>
@@ -101,13 +99,15 @@
   </slide>
   <slide>
     <h2>http://is.gd/angular_dddconf</h2>
+    <h2>Example 1</h2>
   </slide>
   <slide>
     <h3>Two-way data-binding</h3>
     <pre><code data-language="html">&lt;input ng-model= ...</code></pre>
   </slide>
   <slide>
-    <h2>http://is.gd/<br/>angular_dddconf_1</h2>
+    <h2>http://is.gd/angular_dddconf</h2>
+    <h2>Example 2</h2>
   </slide>
   <slide>
     <h3>Controllers</h3>
@@ -120,8 +120,8 @@
     </ul>
   </slide>
   <slide>
-    <snippet lang="html" file="examples/3/simple-controller.html"></snippet>
-    <iframe src="examples/3/simple-controller.html" step="step"></iframe>
+    <h2>http://is.gd/angular_dddconf</h2>
+    <h2>Example 3</h2>
   </slide>
   <slide>
     <h2>$scope</h2>
@@ -133,9 +133,16 @@
     <footer>* causes 90% of the 'WHOA' and 'ANGULAAARRRR' stages</footer>
   </slide>
   <slide>
-    <h3>Challenge: tabbed browsing</h3>
-    <snippet lang="html" file="examples/4/tabs.html"></snippet>
-    <snippet lang="js" file="examples/4/tabs.js"></snippet>
+    <h3>A new syntax</h3>
+    <pre><code data-language="html">&lt;div ng-app='myapp'&gt;</code><br/><code data-language="html">  &lt;div ng-controller='MyCtrl' ...</code></pre>
+    <pre><code data-language="js">angular.module('myapp', [])</code><br/><code data-language="js">  .controller('MyCtrl', function($scope, ...</code></pre>
+    <p class="sub">replaces</p>
+    <pre><code data-language="html">&lt;div ng-app&gt;</code><br/><code data-language="html">  &lt;div ng-controller='MyCtrl' ...</code></pre>
+    <pre><code data-language="js">var MyCtrl = function($scope, ... </code></pre>
+  </slide>
+  <slide>
+    <h2>http://is.gd/angular_dddconf</h2>
+    <h2>Example 4</h2>
   </slide>
   <slide>
     <h3>Tabbed browsing recap</h3>
@@ -145,102 +152,19 @@
     </ul>
   </slide>
   <slide>
-    <h3>Challenge: twitter search</h3>
-    <p class="sub">introducing...</p>
-    <ul class="thin">
-      <li>The<code class="inline">ng-repeat</code>directive</li>
-      <li>Performing ajax requests with the<code class="inline">$http</code>service</li>
-      <li>Using a simple filter</li>
-    </ul>
+    <h2>http://is.gd/angular_dddconf</h2>
+    <h2>Example 5</h2>
   </slide>
-  <slide>
-    <h3>Twitter search</h3>
-    <snippet lang="html" file="examples/5/twitter.html"></snippet>
-    <snippet lang="html" file="examples/5/twitter.js"></snippet>
-  </slide>
-  <slide>
-    <h3>Twitter recap</h3>
-    <ul class="thin">
-      <li><code class="inline">ng-repeat="single in plural"</code>is incredibly useful.</li>
-      <li>adding<code class="inline">| filter:term</code>to the end lets you instantly filter a list.</li>
-      <li><code class="inline">$http.jsonp</code>requires you to pass a<code class="inline">JSON_CALLBACK</code></li>
-      <li><code class="inline">http://docs.angularjs.org/api</code>is your friend.</li>
-    </ul>
-  </slide>
-  <slide>
-    <h1>Directives & Filters</h1>
-  </slide>
-  <slide>
-    <h3>First, a new syntax</h3>
-    <pre><code data-language="html">&lt;div ng-app='myapp'&gt;</code><br/><code data-language="html">  &lt;div ng-controller='MyCtrl' ...</code></pre>
-    <pre><code data-language="js">angular.module('myapp', [])</code><br/><code data-language="js">  .controller('MyCtrl', function($scope, ...</code></pre>
-    <p class="sub">replaces</p>
-    <pre><code data-language="html">&lt;div ng-app&gt;</code><br/><code data-language="html">  &lt;div ng-controller='MyCtrl' ...</code></pre>
-    <pre><code data-language="js">var MyCtrl = function($scope, ... </code></pre>
-  </slide>
-  <slide>
-    <h3>Filters</h3>
-    <snippet lang="html" file="examples/6/twitter-filters.html"></snippet>
-    <snippet lang="js" file="examples/6/twitter-filters.js"></snippet>
-  </slide>
-  <slide>
-    <h1>Directives</h1>
-    <ul>
-      <li>Define custom HTML elements/attributes</li>
-      <li>They're how<code class="inline">ng-click</code>et. al. are implemented</li>
-      <li>Are where your DOM manipulation goes</li>
-    </ul>
-  </slide>
-  <slide>
-    <h3>Directives</h3>
-    <p>Simple Version
-      <snippet lang="js" file="examples/7/directives-snippet-simple.js"></snippet>
-      <p class="sub">assumes</p>
-      <snippet lang="js" file="examples/7/directives-snippet-simple.html"></snippet>
-    </p>
-  </slide>
-  <slide>
-    <h3>Directives</h3>
-    <p>Slightly expanded
-      <snippet lang="js" file="examples/7/directives-snippet-expanded.js"></snippet>
-      <snippet lang="js" file="examples/7/directives-snippet-expanded.html"></snippet>
-    </p>
-  </slide>
-  <slide>
-    <h3>Directives
-      <snippet lang="html" file="examples/7/directives.html"></snippet>
-      <snippet lang="js" file="examples/7/directives.js"></snippet>
-    </h3>
-  </slide>
-  <slide>
-    <h3>Restrict options</h3>
-    <ul>
-      <li><code class="inline">restrict: A</code>(default) works with<code class="inline">&lt;div directive-name='something'&gt;</code></li>
-      <li><code class="inline">restrict: E</code>works with<code class="inline">&lt;directive-name&gt;</code></li>
-      <li><code class="inline">restrict: C</code>works with<code class="inline">&lt;div class='directive-name'&gt;</code></li>
-      <li><code class="inline">restrict: M</code>works with<code class="inline">&lt;!-- directive: something --&gt;</code></li>
-    </ul>
-  </slide>
-  <slide>
-    <h3>Challenge: Code snippet + iframe</h3>
-  </slide>
-  <slide>
-    <h1>Testing</h1>
-  </slide>
-  <slide></slide>
   <slide>
     <h2>Structure</h2><img src="/images/angularjs-structure.png" class="poster"/>
   </slide>
   <slide>
-    <h1>DEMO</h1>
-  </slide>
-  <slide>
-    <h1>Go be superheroes!</h1>
+    <h1>Next Steps</h1>
     <ul>
       <li>Read more at<a href="http://angularjs.org/"> http://angularjs.org/</a><br/>do the<a href="http://docs.angularjs.org/tutorial/"> tutorial</a>, keep the<a href="http://docs.angularjs.org/api/"> api reference</a>bookmarked.</li>
-      <li>Watch the introductory and advanced videos on the<br/><a href="http://www.youtube.com/user/angularjs/videos?view=0">Youtube channel</a>.</li>
-      <li>Check out<a href="https://github.com/geelen/melbjs-demo"> the code from tonight's demo</a>or<br/><a href="https://github.com/geelen/melbjs-preso"> the code from these slides</a>(more advanced)</li>
-      <li>Hit me up on Twitter if you have questions.</li>
+      <li>Check out <a href="http://egghead.io">http://egghead.io</a> - a great collection of screencasts</li>
+      <li>Follow <strong>@ngMelb</strong> on Twitter - next meetup is Wednesday 24th July</li>
+      <li>Ask me stuff on Twitter - <strong>@glenmaddern</strong>.</li>
     </ul>
   </slide>
   <slide>
@@ -254,12 +178,5 @@
          http://goodfil.ms
         |</a><a href="mailto://glen@goodfil.ms"> glen@goodfil.ms</a>
     </div>
-    <p class="one-more-thing">
-      <p class="sub">also!</p>
-      <p>I am running a<strong> half-day AngularJS workshop</strong><br/>here in Melbourne on Saturday,<strong> 9th Feb</strong></p>
-      <p>It will cost<strong> $300</strong></p>
-      <p>Which is a<strong> bargain</strong>because you will learn<strong> heaps</strong></p>
-      <p>Register at<a href="http://angularftw.com/" target="_blank">angularftw.com</a></p>
-    </p>
   </slide>
 </div>
